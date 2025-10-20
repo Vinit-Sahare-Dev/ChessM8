@@ -1,0 +1,763 @@
+header h1 {
+  font-family: cursive;
+  display: inline-block;
+  position: absolute;
+  margin-left: 8px;
+  font-size: 38px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* add text shadow */
+  color: #ffffff; /* set text color */
+  border: #000000;
+  transition: opacity 0.3s, transform 0.3s; /* add transition effect */
+}
+
+header h1:hover {
+  opacity: 0.8; /* reduce opacity on hover */
+  transform: scale(1.1) translateY(-2px); /* add scale and translate effects on hover */
+  text-decoration: none; /* remove underline on hover */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* increase text shadow on hover */
+}
+
+.logo {
+  background-image: url('logo.svg');
+  background-size: 70px 70px; /* adjust size as needed */
+  height: 70px;
+  width: 70px;
+  display: inline-block;
+  vertical-align: middle; /* add this to align the logo with the text */
+  margin-left: 2px; /* add some space between the text and logo */
+  transition: opacity 0.3s, transform 0.3s; /* add transition effect */
+ 
+}
+
+.logo:hover {
+  opacity: 0.8; /* reduce opacity on hover */
+  transform: scale(1.1) translateY(-2px); /* add scale and translate effects on hover */
+
+}
+
+header {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
+  height: 57px;
+  color: #f3eded;
+  width: 95vw;
+  padding: 10px;
+  /* add transition effect */
+}
+nav ul {
+  width: 50vw;
+  position: absolute;
+  right: 0%;
+  top: 0;
+  list-style: none;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-family: cursive;
+  font-size: 22px;
+  gap: 70px;
+  background: rgb(1, 42, 21);
+  
+ border-radius: 100px;
+}
+
+
+nav ul li {
+  transition: transform 0.3s; /* add transition effect */
+}
+
+nav ul li:hover {
+  transform: scale(1.1); /* add scale effect on hover */
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s; /* add transition effect */
+}
+
+nav ul li a:hover {
+  color: #ccc; /* change text color on hover */
+}
+
+nav ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s; /* add transition effect */
+}
+
+nav ul li a:hover::after {
+  width: 100%; /* add underline effect on hover */
+}
+nav li {
+  margin-left: 10px;
+  margin-top: 15px;
+
+}
+
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ccc;
+}
+
+button {
+  margin-right: 40px;
+  margin-top: 8px;
+  background-color: #1962b5;
+  color: #fff;
+  border: none;
+  padding: 5px 8px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 15px;
+  font-family: cursive;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+.app {
+  color: rgb(23, 14, 14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-info {
+  margin-bottom: 20px;
+}
+
+.stats-container {
+  position: absolute;
+  top: 20%;
+  right: 13%;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-family: cursive;
+  font-size: 20px;
+  color:#ffffff;
+  background:  linear-gradient(90deg, rgba(115, 114, 119, 0.8) 1%, rgba(1, 37, 22, 0.92) 100%);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+
+
+}
+
+.timer{
+  position: absolute;
+  top :10%;
+  right: 150% ;
+  background-color: none;
+}
+
+.move-list {
+  position: absolute;
+  top: 17%;
+  left: 0%;
+  background: linear-gradient(90deg, rgba(115, 114, 119, 0.8) 1%, rgba(1, 37, 22, 0.92) 100%);
+  height: 550px;
+  width: 260px;
+  overflow-y: auto; /* Add this line to enable vertical scrolling */
+  padding: 10px;
+  margin: 0;
+  font-family: cursive;
+  color: #ddd160;
+  font-weight: bold;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+
+.move-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  
+  margin-bottom: 10px;
+  font-family: cursive;
+  color: #fff;
+  font-size: 30px;
+}
+
+.move-item:nth-child(even) {
+  background-color: rgb(1, 42, 21);
+  border-radius: 10px;
+}
+
+.move-arrow {
+  font-size: 24px;
+  color: #000000;
+  margin-right: 10px;
+}
+
+.move-index {
+  
+  font-size: 23.5px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  margin-right: 10px;
+}
+
+.move-index:hover {
+  color: rgba(140, 40, 40, 0.7);
+  cursor: pointer;
+}
+
+.chessboard-container {
+  position: relative;
+  align-items: center;
+  margin-right: 160px;
+  margin-top: 100px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.game-over-container {
+  position: absolute;
+  top: 63%;
+  right: 0%;
+  transform: translateY(-50%);
+  width: 300px;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-right: 130px;
+  font-family: cursive;
+}
+.game-over {
+  padding: 20px;
+  background:linear-gradient(90deg, rgba(88, 87, 92, 0.8) 1%, rgba(1, 37, 22, 0.92) 100%);
+
+  border-radius: 20px;
+  font-size: 18px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: cursive;
+  color: red;
+  border: hwb(8 15% 19%);
+ 
+  transition: transform 1s ease-in;
+}
+
+
+
+
+
+.game-over h1 {
+
+  font-family: cursive;
+  font-size: 35px;
+  color: hwb(111 40% 16%);
+}
+
+.blur {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.winner-text {
+  font-family: cursive;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.restart-button {
+  background-color: hwb(111 40% 16%);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+ position: absolute;
+  top: 97%;
+  right: 19%;
+
+}
+
+.restart-button:hover {
+  background-color: #e67e73;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.blog {
+  height: 230px;
+  width: 430px;
+  position: absolute; 
+  top: 108%;
+  right: 8%;
+  padding: 10px;
+  display: flex; /* added flexbox layout */
+  align-items: right; /* vertically center the content */
+  border-radius: 10px;
+  gap: 20px;
+  
+}
+
+.blog img {
+  height: 180px;
+  width: 180px;
+  margin-right: 15px;
+ border:  1px solid #ddd;
+ border-radius: 5px;
+}
+
+.blog span {
+  
+  margin-top: 10px;
+  margin-right: 19px;
+  color: #ffffff;
+  font-size: 20px;
+  flex: 1; /* take up the remaining space */
+}
+.blog:hover {
+  background: linear-gradient(90deg, rgba(88, 87, 92, 0.8) 1%, rgba(1, 37, 22, 0.92) 100%);
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+}
+
+.blog:hover img {
+  border-color: #aaa;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.blog:hover span {
+  color: #ffff00; /* change text color on hover */
+  transition: all 0.3s ease-in-out;
+ 
+}
+
+.magnus {
+  height: 230px;
+  width: 430px;
+  position: absolute; 
+  top: 142%;
+  left: 32%;
+  padding: 10px;
+  display: flex; /* added flexbox layout */
+  align-items: right; /* vertically center the content */
+  border-radius: 10px;
+  gap: 20px;
+}
+
+.magnus img {
+  height: 180px;
+  width: 180px;
+  margin-right: 15px;
+ border:  1px solid #ddd;
+ border-radius: 5px;
+}
+
+.magnus span {
+  
+  margin-top: 10px;
+  margin-right: 19px;
+  color: #ffffff;
+  font-size: 20px;
+  flex: 1; /* take up the remaining space */
+}
+.magnus:hover {
+  background: linear-gradient(90deg, rgba(88, 87, 92, 0.8) 1%, rgba(1, 37, 22, 0.92) 100%);
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+}
+
+.magnus:hover img {
+  border-color: #aaa;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.magnus:hover span {
+  color: #ffff00; /* change text color on hover */
+  transition: all 0.3s ease-in-out;
+ 
+}
+
+.vish {
+  height: 230px;
+  width: 430px;
+  position: absolute; 
+  top: 177%;
+  right: 8%;
+  padding: 10px;
+  display: flex; /* added flexbox layout */
+  align-items: right; /* vertically center the content */
+  border-radius: 10px;
+  gap: 20px;
+  
+}
+
+.vish  img {
+  height: 180px;
+  width: 180px;
+  margin-right: 15px;
+ border:  1px solid #ddd;
+ border-radius: 5px;
+}
+
+.vish  span {
+  
+  margin-top: 10px;
+  margin-right: 19px;
+  color: #ffffff;
+  font-size: 20px;
+  flex: 1; /* take up the remaining space */
+}
+.vish:hover {
+  background: linear-gradient(90deg, rgba(88, 87, 92, 0.8) 1%, rgba(1, 37, 22, 0.92) 100%);
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+}
+
+.vish:hover img {
+  border-color: #aaa;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.vish:hover span {
+  color: #ffff00; /* change text color on hover */
+  transition: all 0.3s ease-in-out;
+ 
+}
+
+
+footer { 
+   background: rgb(1, 42, 21);
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 0%;
+  margin-top: 900px;
+  width: 100%;
+  font-family: cursive;
+
+}
+
+.container {
+  max-width: 100%;
+  margin-top: px;
+  padding: 10px;
+
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col-md-4 {
+  flex-basis: 33.33%;
+  margin: 20px;
+}
+
+h4 {
+  margin-top: 0;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  color: #ccc;
+}
+
+.copyright {
+  background-color: #444;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+}
+
+.copyright p {
+  margin: 0;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  background-color: #2178c4; /* green background */
+  color: #ffffff; /* white text */
+  padding: 10px 20px; /* add some padding */
+ border: none;
+  border-radius: 5px; /* add rounded corners */
+  cursor: pointer; /* change cursor to a pointing hand */
+  font-family: cursive;
+  font-size: 20px;
+  margin-right: 30px;
+  border-radius: 15px;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41; /* darker green on hover */
+  transition: background-color 0.3s ease-in-out; /* smooth transition */
+}
+
+button[type="submit"]:active {
+  background-color: #3e8e41; /* darker green on active */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a shadow on active */
+}
+
+ 
+
+/* Add Font Awesome to your project */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+.Instagram {
+  font-family: 'Font Awesome 5 Brands';
+  content: '\f16d'; /* Instagram icon */
+}
+.Linkedin{
+  font-family: 'Font Awesome 5 Brands';
+  content: '\f08c'; /* LinkedIn icon */
+}
+
+
+
+.Instagram {
+  background-image: url('Instagram_logo_2016.svg.png');
+  background-size: 24px 24px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+
+.Linkedin{
+  background-image: url('LinkedIn_icon.svg.png');
+  background-size: 24px 24px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+
+.Github{
+  background-image: url('github-logo-7880D80B8D-seeklogo.com.png');
+  background-size: 24px 24px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.Instagram:hover {
+  transform: scale(1.1); /* scale up the icon on hover */
+  background-color: #fff; /* add a white background on hover */
+  border-radius: 50%; /* add a rounded corner on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow on hover */
+}
+
+.Linkedin:hover {
+  transform: scale(1.1); /* scale up the icon on hover */
+  background-color: #fff; /* add a white background on hover */
+  border-radius: 50%; /* add a rounded corner on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow on hover */
+}
+
+.Github:hover {
+  transform: scale(1.1); /* scale up the icon on hover */
+  background-color: #fff; /* add a white background on hover */
+  border-radius: 50%; /* add a rounded corner on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow on hover */
+}
+
+.Instagram, .Linkedin, .Github {
+  transition: transform 0.2s, background-color 0.2s, border-radius 0.2s, box-shadow 0.2s;
+}
+
+.inpp{
+  align-items: center;
+  margin-right: 20px;
+}
+
+.copyright{
+  align-items: center;
+}
+.social{
+  align-items: center;
+}
+
+.timer{
+  position: absolute;
+  top:10%;
+  right:50%;
+  background-color: #7a7c7a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: default;
+}
+
+.timer {
+  font-weight: bold;
+}
+
+
+.ultimate-chess{
+  position: absolute;
+  top:11%;
+  left:3%;
+  font-family: cursive;
+  font-size: 12px;
+  transform: skew(-10deg); /* add a slight angle to the text */
+  display: block;
+  color:  rgb(1, 42, 21);
+}
+
+
+/* Chat Box Container */
+.chat-box {
+  width: 350px; /* adjust the width to your liking */
+  height: 500px; /* adjust the height to your liking */
+  position: absolute;
+  top:125%;
+  left:2%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  overflow-y: auto; /* enable vertical scrolling */
+  background: linear-gradient(90deg, rgba(88, 87, 92, 0.8) 1%, rgba(1, 37, 22, 0.92) 100%);
+  font-family: cursive;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Message List */
+.message-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.message-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.message-list li:last-child {
+  border-bottom: none;
+}
+
+/* Message Content */
+.message {
+  font-size: 14px;
+  color: #f7f6f6;
+}
+
+.username {
+  font-weight: bold;
+  color: #000000;
+  margin-right: 10px;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #fff7f7;
+  margin-left: 10px;
+}
+
+/* Input Fields */
+.message-input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: cursive;
+
+}
+
+.username-input {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 10px;
+  font-family: cursive;
+}
+
+/* Send Button */
+.send-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #3e8e41;
+}
+
+/* Other Styles */
+.chat-box h2 {
+  margin-top: 0;
+  font-weight: bold;
+  color: #79e614;
+}
+
+.chat-box ul {
+  margin-bottom: 20px;
+}
+
+
+.community h2{
+
+  position: absolute;
+  top:115%;
+  left: 2.5%;
+  font-family: cursive;
+  color: #0f0e0e;
+}
+
+
+.celebration {
+  background-color: #fff;
+  animation: celebration 0s ease-in-out;
+}
+

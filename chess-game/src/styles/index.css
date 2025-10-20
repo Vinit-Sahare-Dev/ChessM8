@@ -1,0 +1,22 @@
+/* index.css */
+body{
+
+  height: 1500px;
+  background: linear-gradient(90deg, rgba(102, 179, 86, 0.8) 3%, rgba(1, 52, 47, 0.984) 100%);
+  
+}
+
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
