@@ -1,4 +1,3 @@
-import '../styles/Professional.css';
 import React, { useState } from 'react';
 import { Chessboard } from 'react-chessboard';
 import Confetti from 'react-confetti';
@@ -9,8 +8,9 @@ import ProfessionalBoard from './ProfessionalBoard';
 import MoveHistory from './MoveHistory';
 import PositionAnalysis from './PositionAnalysis';
 import ChessQuotes from './ChessQuotes';
+import '../styles/Professional.css';
 
-function App() {
+const ProfessionalApp = () => {
   const {
     game,
     gameOver,
@@ -46,6 +46,7 @@ function App() {
 
   const copyFEN = () => {
     navigator.clipboard.writeText(game.fen());
+    // You could add a toast notification here
   };
 
   return (
@@ -70,6 +71,8 @@ function App() {
             position={game.fen()} 
             onPieceDrop={onDrop}
             boardOrientation={boardOrientation}
+            onFlipBoard={flipBoard}
+            onCopyFEN={copyFEN}
           />
         </div>
         
@@ -84,13 +87,13 @@ function App() {
           
           <div className="game-controls">
             <button className="control-btn primary" onClick={restartGame}>
-              New Game
+              🔄 New Game
             </button>
             <button className="control-btn secondary" onClick={() => changeDifficulty(10)}>
-              AI Level {aiDifficulty}
+              🤖 AI Level {aiDifficulty}
             </button>
             <button className="control-btn" onClick={toggleAnalysis}>
-              Analysis {showAnalysis ? 'ON' : 'OFF'}
+              📊 Analysis {showAnalysis ? 'ON' : 'OFF'}
             </button>
           </div>
         </div>
@@ -117,6 +120,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
-export default App;
+export default ProfessionalApp;
