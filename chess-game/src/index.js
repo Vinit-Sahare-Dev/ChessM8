@@ -1,9 +1,9 @@
-// index.js
+// index.js - Legacy file (use main.jsx instead)
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
-import App from './components/App';
+import App from './App.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App/>);

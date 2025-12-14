@@ -91,7 +91,6 @@ function App() {
                   <motion.div
                     key="community"
                     variants={pageVariants}
-}
                     initial="initial"
                     animate="animate"
                     exit="exit"
