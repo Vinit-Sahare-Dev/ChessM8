@@ -4,13 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Toaster } from 'react-hot-toast'
 import { useTheme } from './hooks/useTheme'
 import LoadingSpinner from './components/ui/LoadingSpinner'
-import Navbar from './components/layout/Navbar'
-import Footer from './components/layout/Footer'
+import ProfessionalNavbar from './components/ProfessionalNavbar'
+import ProfessionalFooter from './components/ProfessionalFooter'
 import ErrorBoundary from './components/ui/ErrorBoundary'
 
 // Lazy load pages for better performance
-const Home = lazy(() => import('./pages/Home'))
-const Play = lazy(() => import('./pages/Play'))
+const Home = lazy(() => import('./components/ProfessionalHome'))
+const Play = lazy(() => import('./components/ProfessionalPlay'))
 const Learn = lazy(() => import('./pages/Learn'))
 const Community = lazy(() => import('./pages/Community'))
 const Profile = lazy(() => import('./pages/Profile'))
@@ -37,7 +37,7 @@ function App() {
     <div className="app" data-theme={theme}>
       <ErrorBoundary>
         <div className="app-container">
-          <Navbar />
+          <ProfessionalNavbar />
           
           <main className="main-content">
             <AnimatePresence mode="wait">
@@ -152,7 +152,7 @@ function App() {
             </AnimatePresence>
           </main>
           
-          <Footer />
+          <ProfessionalFooter />
         </div>
         
         <Toaster
@@ -160,10 +160,13 @@ function App() {
           toastOptions={{
             duration: 4000,
             style: {
-              background: 'var(--bg-secondary)',
-              color: 'var(--text-primary)',
-              border: '1px solid var(--border-color)',
-              borderRadius: '8px',
+              background: 'rgba(15, 23, 42, 0.9)',
+              color: '#ffffff',
+              border: '1px solid rgba(43, 108, 176, 0.3)',
+              borderRadius: '12px',
+              fontSize: '14px',
+              fontWeight: '500',
+              backdropFilter: 'blur(10px)',
             },
           }}
         />

@@ -1,0 +1,560 @@
+/* Chess.com Inspired Professional Design System */
+
+/* Chess.com Color Palette */
+:root {
+  /* Primary Colors */
+  --chess-blue: #81b64c;
+  --chess-blue-light: #b4c7d9;
+  --chess-blue-dark: #312e2b;
+  --chess-orange: #f7a352;
+  --chess-orange-light: #ffb366;
+  --chess-green: #26a417;
+  --chess-red: #c9302c;
+  --chess-purple: #6b46c1;
+  
+  /* Background Colors */
+  --board-light: #f0d9b5;
+  --board-dark: #b58863;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f7f3e8;
+  --bg-tertiary: #e8e0d5;
+  --bg-dark: #312e2b;
+  --bg-dark-secondary: #202020;
+  
+  /* Text Colors */
+  --text-primary: #312e2b;
+  --text-secondary: #6b46c1;
+  --text-light: #ffffff;
+  --text-muted: #878680;
+  
+  /* Gradients */
+  --primary-gradient: linear-gradient(135deg, #81b64c 0%, #6b46c1 100%);
+  --secondary-gradient: linear-gradient(135deg, #f7a352 0%, #c9302c 100%);
+  --success-gradient: linear-gradient(135deg, #26a417 0%, #1e7e34 100%);
+  --dark-gradient: linear-gradient(135deg, #312e2b 0%, #202020 100%);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px rgba(129, 182, 76, 0.3);
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s ease;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-primary: #312e2b;
+  --bg-secondary: #202020;
+  --bg-tertiary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #b4c7d9;
+  --text-muted: #878680;
+  --board-light: #b58863;
+  --board-dark: #f0d9b5;
+}
+
+/* Modern Chess.com Style Navigation */
+.chesscom-nav {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--bg-tertiary);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.chesscom-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.chesscom-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.chesscom-logo {
+  width: 40px;
+  height: 40px;
+  background: var(--primary-gradient);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+}
+
+.chesscom-logo:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-glow);
+}
+
+.chesscom-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chesscom-nav-link {
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.chesscom-nav-link:hover {
+  background: var(--bg-secondary);
+  color: var(--chess-blue);
+  transform: translateY(-2px);
+}
+
+.chesscom-nav-link.active {
+  background: var(--chess-blue);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.chesscom-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--chess-orange);
+}
+
+/* Modern Chess.com Style Buttons */
+.chesscom-btn {
+  background: var(--chess-blue);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.chesscom-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.chesscom-btn:hover::before {
+  left: 100%;
+}
+
+.chesscom-btn:hover {
+  background: var(--chess-blue-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.chesscom-btn:active {
+  transform: translateY(0);
+}
+
+.chesscom-btn-secondary {
+  background: transparent;
+  color: var(--chess-blue);
+  border: 2px solid var(--chess-blue);
+  box-shadow: none;
+}
+
+.chesscom-btn-secondary:hover {
+  background: var(--chess-blue);
+  color: white;
+}
+
+.chesscom-btn-orange {
+  background: var(--chess-orange);
+}
+
+.chesscom-btn-orange:hover {
+  background: var(--chess-orange-light);
+}
+
+.chesscom-btn-green {
+  background: var(--chess-green);
+}
+
+.chesscom-btn-green:hover {
+  background: #1e7e34;
+}
+
+/* Modern Chess.com Style Cards */
+.chesscom-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.chesscom-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--chess-blue);
+}
+
+/* Modern Chess.com Style Chess Board */
+.chesscom-board-container {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.chesscom-board-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-gradient);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.chesscom-board {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    inset 0 0 20px rgba(129, 182, 76, 0.1);
+}
+
+/* Modern Chess.com Style Hero */
+.chesscom-hero {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.chesscom-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(129, 182, 76, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(247, 163, 82, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.chesscom-hero-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  max-width: 800px;
+  padding: 0 24px;
+}
+
+.chesscom-hero-title {
+  font-size: clamp(3rem, 6vw, 4rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.chesscom-hero-title .highlight {
+  color: var(--chess-blue);
+  position: relative;
+}
+
+.chesscom-hero-title .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--chess-orange);
+}
+
+.chesscom-hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.chesscom-hero-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Modern Chess.com Style Stats */
+.chesscom-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 40px 24px;
+}
+
+.chesscom-stat-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.chesscom-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary-gradient);
+}
+
+.chesscom-stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--chess-blue);
+}
+
+.chesscom-stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--chess-blue);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.chesscom-stat-label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Modern Chess.com Style Features */
+.chesscom-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 40px 24px;
+}
+
+.chesscom-feature-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.chesscom-feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-gradient);
+}
+
+.chesscom-feature-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--chess-blue);
+}
+
+.chesscom-feature-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.chesscom-feature-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.chesscom-feature-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.chesscom-feature-link {
+  color: var(--chess-blue);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-fast);
+}
+
+.chesscom-feature-link:hover {
+  gap: 12px;
+  color: var(--chess-blue-light);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .chesscom-nav .container {
+    padding: 12px 16px;
+  }
+  
+  .chesscom-nav-links {
+    display: none;
+  }
+  
+  .chesscom-hero-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+  
+  .chesscom-hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .chesscom-hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .chesscom-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .chesscom-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 16px;
+  }
+  
+  .chesscom-features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 24px 16px;
+  }
+  
+  .chesscom-stat-card,
+  .chesscom-feature-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chesscom-hero {
+    padding: 60px 0;
+  }
+  
+  .chesscom-hero-content {
+    padding: 0 16px;
+  }
+  
+  .chesscom-hero-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+  
+  .chesscom-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .chesscom-stat-number {
+    font-size: 2rem;
+  }
+  
+  .chesscom-feature-icon {
+    font-size: 2.5rem;
+  }
+}
+
+/* Animations */
+@keyframes chesscom-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+@keyframes chesscom-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.chesscom-pulse {
+  animation: chesscom-pulse 2s ease-in-out infinite;
+}
+
+.chesscom-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.chesscom-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: chesscom-shimmer 3s infinite;
+}
